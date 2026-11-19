@@ -1,0 +1,159 @@
+/* Leonida Trophy Atlas — dark neon UI, our own look. No external fonts or images. */
+:root {
+  --bg: #0c0e13;
+  --panel: #151924;
+  --panel-2: #1b2130;
+  --line: #262e42;
+  --text: #e9ebf2;
+  --muted: #9aa3b5;
+  --pink: #ff2d78;
+  --teal: #00e5c0;
+  --gold: #f5c542;
+  --silver: #c3cad8;
+  --bronze: #d08a4a;
+  --platinum: #7fe7ff;
+  --danger: #ff5d5d;
+  --radius: 12px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+}
+.hero {
+  background: linear-gradient(135deg, #1a0b2e 0%, #0c0e13 55%, #032b28 100%);
+  border-bottom: 3px solid var(--pink);
+  padding: 20px 20px 16px;
+}
+.hero-inner { max-width: 1080px; margin: 0 auto; }
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--teal);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+h1 {
+  margin: 0 0 6px;
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+h1::after { content: ""; display: block; width: 72px; height: 4px; margin-top: 10px; background: var(--pink); border-radius: 2px; }
+.tagline { margin: 0 0 12px; color: var(--muted); max-width: 760px; font-size: 15px; }
+.progress-line { display: flex; justify-content: space-between; font-weight: 600; font-size: 15px; }
+.progress-bar { height: 12px; margin-top: 6px; background: #232a3b; border-radius: 6px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--pink), var(--teal)); border-radius: 6px; transition: width 0.3s; }
+.grade-counts { margin-top: 8px; color: var(--muted); font-size: 13px; }
+.grade-counts b { color: var(--text); }
+
+main { max-width: 1080px; margin: 0 auto; padding: 0 20px 40px; }
+h2 { font-size: 22px; margin: 20px 0 8px; }
+.section-note { color: var(--muted); margin: 0 0 14px; max-width: 860px; }
+.section-note strong { color: var(--danger); }
+.roadmap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.roadmap-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.roadmap-card h3 { margin: 0 0 4px; font-size: 16px; }
+.roadmap-card h3 .stage-num {
+  display: inline-block;
+  width: 24px; height: 24px; line-height: 24px; text-align: center;
+  border-radius: 50%; background: var(--pink); color: #fff;
+  font-size: 13px; margin-right: 8px;
+}
+.roadmap-card p { margin: 0; color: var(--muted); font-size: 14px; }
+.roadmap-card .stage-count { display: block; margin-top: 8px; color: var(--teal); font-size: 13px; font-weight: 600; }
+
+.controls {
+  margin-top: 24px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.control-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 4px 0; }
+.control-row label { font-size: 14px; color: var(--muted); }
+.control-row label.check { color: var(--text); cursor: pointer; }
+input[type="search"], select {
+  background: var(--panel-2);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
+}
+input[type="search"] { width: 260px; }
+button, .import-btn {
+  background: var(--pink);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.import-btn { background: var(--panel-2); border: 1px solid var(--line); color: var(--text); }
+.import-btn input { display: none; }
+#resetBtn { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+.saved-note { color: var(--muted); font-size: 13px; }
+
+.list-meta { color: var(--muted); font-size: 14px; margin: 20px 0 10px; }
+.trophy-list { display: grid; gap: 10px; }
+.trophy {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 12px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.trophy.earned { border-color: var(--teal); }
+.trophy input[type="checkbox"] { width: 22px; height: 22px; margin-top: 4px; accent-color: var(--teal); cursor: pointer; }
+.trophy-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; }
+.trophy-name { font-size: 17px; font-weight: 700; margin: 0; }
+.trophy-name.earned { color: var(--teal); text-decoration: line-through; text-decoration-thickness: 2px; }
+.grade-badge {
+  font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+  padding: 2px 8px; border-radius: 20px; border: 1px solid currentColor;
+}
+.grade-platinum { color: var(--platinum); }
+.grade-gold { color: var(--gold); }
+.grade-silver { color: var(--silver); }
+.grade-bronze { color: var(--bronze); }
+.tag {
+  font-size: 12px; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 20px; padding: 2px 8px;
+}
+.tag.missable { color: var(--danger); border-color: var(--danger); font-weight: 700; }
+.tag.hidden-tag { color: var(--teal); }
+.trophy-desc { margin: 4px 0 0; color: var(--muted); font-style: italic; }
+.trophy-count { margin: 4px 0 0; color: var(--teal); font-size: 13px; font-weight: 600; }
+.guide-toggle {
+  margin-top: 8px; background: none; border: none; color: var(--pink);
+  padding: 0; font-size: 14px; font-weight: 700; cursor: pointer; text-align: left;
+}
+.guide { margin-top: 8px; border-top: 1px dashed var(--line); padding-top: 8px; }
+.guide p { margin: 0 0 6px; font-size: 15px; }
+.guide .sources { margin: 0; font-size: 13px; color: var(--muted); }
+.guide .sources a { color: var(--teal); }
+.spoiler-hidden { color: var(--muted); font-style: italic; }
+.empty { color: var(--muted); padding: 20px; text-align: center; }
+
+.sources { margin-top: 32px; border-top: 1px solid var(--line); padding-top: 8px; }
+.sources ul { color: var(--muted); font-size: 14px; }
+.sources a { color: var(--teal); }
+.offline-note { color: var(--teal); font-size: 14px; }
+footer { max-width: 1080px; margin: 0 auto; padding: 0 20px 28px; color: var(--muted); font-size: 13px; }
+@media (max-width: 640px) {
+  h1 { font-size: 30px; }
+  input[type="search"] { width: 100%; }
+}

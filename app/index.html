@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Atlas — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies &middot; fully offline</p>
+    <h1>Leonida Trophy Atlas</h1>
+    <p class="tagline">Every trophy, its official description and grade, a guide in our own words with its sources, a roadmap to the platinum — and a tracker that remembers what you have earned.</p>
+    <div class="progress-wrap">
+      <div class="progress-line"><span id="progressText">0 of 55 earned</span><span id="progressPct">0%</span></div>
+      <div class="progress-bar"><div id="progressFill" class="progress-fill" style="width:0%"></div></div>
+      <div class="grade-counts" id="gradeCounts"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="roadmap" id="roadmap" aria-label="Roadmap to the platinum">
+    <h2>Roadmap to the platinum</h2>
+    <p class="section-note">Four stages, in order. The only trophy the trackers flag as possibly missable is <strong>Positive Mental Attitude</strong> — do its Chapter 1 meditation spot before Chapter 1 ends. There is no mission replay, so keep a manual save at the start of every chapter and one before the final mission.</p>
+    <div class="roadmap-grid" id="roadmapGrid"></div>
+  </section>
+
+  <section class="controls" aria-label="Filters and tracker controls">
+    <div class="control-row">
+      <label class="search">Search <input id="search" type="search" placeholder="Trophy name, mission, activity…" autocomplete="off"></label>
+      <label>Kind
+        <select id="kind">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="missable">Missable</option>
+          <option value="collectibles">Collectibles</option>
+          <option value="activities">Activities</option>
+          <option value="online">Online</option>
+          <option value="platinum">Platinum</option>
+        </select>
+      </label>
+      <label>Grade
+        <select id="grade">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="check"><input id="spoiler" type="checkbox"> Hide story spoilers</label>
+      <label class="check"><input id="earnedOnly" type="checkbox"> Earned only</label>
+    </div>
+    <div class="control-row">
+      <button id="exportBtn" type="button">Export progress</button>
+      <label class="import-btn">Import progress <input id="importFile" type="file" accept="application/json"></label>
+      <button id="resetBtn" type="button">Reset progress</button>
+      <span class="saved-note" id="savedNote">Progress is saved in this browser (localStorage). Nothing leaves your device.</span>
+    </div>
+  </section>
+
+  <section aria-label="Trophy list">
+    <p class="list-meta" id="listMeta"></p>
+    <div class="trophy-list" id="trophyList"></div>
+    <p class="empty" id="emptyState" hidden>No trophies match these filters. Try clearing the search or choosing another kind.</p>
+  </section>
+
+  <section class="sources" aria-label="Sources">
+    <h2>Sources</h2>
+    <p>Every guide above cites the source its facts come from. The trophy names, descriptions and grades are as PlayStation publishes them; the guides are written for this entry, in our own words — a source is cited, never copied. List data and counts were cross-checked across the trackers below, which agree on every name, description and grade.</p>
+    <ul id="sourceList"></ul>
+    <p class="offline-note">This guide is fully offline: it loads no file from outside this folder and makes no network request. It works with the network off.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Trophy Atlas — an unofficial fan guide. Not affiliated with Rockstar Games, Take-Two Interactive or Sony Interactive Entertainment. No Rockstar logo, artwork or game screenshots are used here; the look is our own.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
